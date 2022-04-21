@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo App</title>
+</head>
+<body>
+<div th:insert="fragments/components :: header"></div>
+
+<div th:replace="fragments/components :: header"></div>
+
+<!--depreciated since 3.0-->
+<div th:include="fragments/components :: header"></div>
+
+<h1>Welcome to Demo App</h1>
+<p>Hey there!
+    <th:block th:text="${message}">message</th:block>
+</p>
+
+<div th:insert="fragments/footer :: footer"></div>
+
+<div th:insert="fragments/components :: div.title"></div>
+
+<!--Option 1-->
+<div th:replace="fragments/components :: name('John', 'Doe')"></div>
+
+<!--Option 2-->
+<div th:replace="fragments/components :: name(firstName='John', lastName='Doe')"></div>
+
+<div th:replace="fragments/footer :: ${user} ? 'admin-footer' : 'footer'"></div>
+
+<div th:replace="${user} ? ~{fragments/footer :: footer} : ~{fragments/components :: footer}"></div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+CRUD APP
+
+- Angular 12: https://www.bezkoder.com/angular-12-jwt-auth/
+- Spring Boot: https://www.bezkoder.com/spring-boot-hibernate-oracle/
+
+- Thymeleaf references:
+	https://attacomsian.com/blog/spring-boot-thymeleaf-example
+	https://attacomsian.com/blog/thymeleaf-fragments

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="baseHead(title, links)">
+
+    <title th:replace="${title}">Atta | Founder. Developer. Blogger.</title>
+
+    <!-- default styles and scripts -->
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/jquery.min.js}"></script>
+
+    <!-- placeholder for additional links -->
+    <th:block th:replace="${links}"/>
+
+</head>
+
+<head th:replace="fragments/base :: baseHead(~{::title}, ~{::link})">
+
+    <title>Introduction to Thymeleaf Fragments | Atta Blog</title>
+
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+
+</head>
+</html>
