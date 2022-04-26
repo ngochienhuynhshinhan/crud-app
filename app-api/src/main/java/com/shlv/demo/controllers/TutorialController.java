@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:8082")
 @RestController
 @RequestMapping("/api")
 public class TutorialController {
@@ -26,10 +26,15 @@ public class TutorialController {
     public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
         List<Tutorial> tutorials = new ArrayList<Tutorial>();
 
-        if (title == null) {
+        if (title == null || title == "") {
             tutorialRepository.findAll().forEach(tutorials::add);
         } else {
-            tutorialRepository.findByTitleContaining(title).forEach(tutorials::add);
+            try {
+                tutorialRepository.findByTitleContaining(title.toString());
+                //.forEach(tutorials::add)
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         if (tutorials.isEmpty()) {
