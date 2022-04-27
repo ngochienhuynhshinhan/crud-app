@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
 import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
 import { TutorialListComponent } from './components/tutorial-list/tutorial-list.component';
+import { ValidationFormComponent } from './components/validation-form/validation-form.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 
@@ -16,7 +19,10 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     AppComponent,
     AddTutorialComponent,
     TutorialDetailsComponent,
-    TutorialListComponent
+    TutorialListComponent,
+    ValidationFormComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
